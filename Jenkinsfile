@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build( imageName, ":$BUILD_NUMBER", "./src/cart/")
+                    dockerImage = docker.build( "${imageName}:${BUILD_NUMBER}", "./src/cart/" )
                 }
             }
         }
