@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM public.ecr.aws/amazonlinux/amazonlinux:2023 as build
+=======
+FROM public.ecr.aws/amazonlinux/amazonlinux:2023 AS build
+>>>>>>> 74699f6fad0d8e67f26c7f0fa99a5b4cf44ab762
 
 RUN dnf --setopt=install_weak_deps=False install -q -y \
     maven \
@@ -57,4 +61,10 @@ COPY --chown=appuser:appuser --from=build /app.jar .
 
 EXPOSE 8080
 
+<<<<<<< HEAD
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]
+=======
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]
+
+
+>>>>>>> 74699f6fad0d8e67f26c7f0fa99a5b4cf44ab762
