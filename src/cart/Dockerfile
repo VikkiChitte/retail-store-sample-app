@@ -2,7 +2,7 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:2023 AS build
 
 RUN dnf --setopt=install_weak_deps=False install -q -y \
     maven \
-    java-17-amazon-corretto-headless \
+    java-21-amazon-corretto-headless \
     which \
     tar \
     gzip \
@@ -29,7 +29,7 @@ RUN ./mvnw -DskipTests package -q && \
 FROM public.ecr.aws/amazonlinux/amazonlinux:2023
 
 RUN dnf --setopt=install_weak_deps=False install -q -y \
-    java-17-amazon-corretto-headless \
+    java-21-amazon-corretto-headless \
     shadow-utils \
     && \
     dnf clean all
